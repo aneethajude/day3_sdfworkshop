@@ -55,9 +55,7 @@ public final class App {
                 case "list":{listCart(cartItems);}
                
                 break;
-                case "delete":deleteCartItem(cartItems, input);
-
-                break;
+               
             }
             String strValue="";
             if(input.startsWith("add")){
@@ -108,7 +106,7 @@ public final class App {
 
     } 
 
-    public static void deleteCartItem(List<String>cartItems, String input){
+    public static List<String> deleteCartItem(List<String>cartItems, String input){
         String strValue;
         Scanner scanner = new Scanner(input.substring(6));
         while (scanner.hasNext()){
@@ -121,6 +119,7 @@ public final class App {
                 displayMessage("Incorrect item index");
             } 
         }
+        return(cartItems);
     }
     public static void listCart(List<String> cartItems){
         if(cartItems.size()>0){
